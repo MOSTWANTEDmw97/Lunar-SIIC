@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="src\core\FeatureMatcher.cpp" />
     <ClCompile Include="src\core\ImageAligner.cpp" />
+    <ClCompile Include="src\core\ImageEvaluator.cpp" />
     <ClCompile Include="src\core\ImageLoader.cpp" />
     <ClCompile Include="src\core\TransformEstimator.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -160,6 +161,8 @@
   <ItemGroup>
     <ClInclude Include="headers\core\FeatureMatcher.h" />
     <ClInclude Include="headers\core\ImageAligner.h" />
+    <ClInclude Include="headers\core\ImageEvaluator.h" />
+    <ClInclude Include="headers\core\ImageFeatureData.h" />
     <ClInclude Include="headers\core\ImageLoader.h" />
     <ClInclude Include="headers\core\TransformEstimator.h" />
   </ItemGroup>

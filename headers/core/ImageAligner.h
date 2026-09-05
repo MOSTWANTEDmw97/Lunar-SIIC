@@ -6,8 +6,8 @@
 
 class ImageAligner
 {
-	public:
-		cv::Mat AlignImages(const cv::Mat& sourceImage, const cv::Mat& referenceImage, cv::Size alignedImageSize);
+	public: 
+		static cv::Mat AlignImages(const cv::Mat& sourceImage, const cv::Mat& H, cv::Size alignedImageSize);
 };
 
 #endif // !IMAGEALIGNER_H

@@ -1,22 +1,35 @@
-#include<opencv2/opencv.hpp>
-#include <opencv2/core.hpp>
-#include<Eigen/Dense>
 #include <iostream>
+
+#include"core/ImageEvaluator.h"
+#include"core/TransformEstimator.h"
+#include"core/FeatureMatcher.h"
+#include"core/ImageAligner.h"
+#include"core/ImageLoader.h"
 
 //Lunar Scale & Illumination Invariant Correspondance (Lunar-SIIC)
 int main()
 {
-    // Create a 2x2 matrix and a vector
-    Eigen::Matrix2d mat;
-    mat << 1, 2,
-        3, 4;
-    Eigen::Vector2d vec(5, 6);
-    // Multiply
-    Eigen::Vector2d result = mat * vec;
+    //In a try so it dosent accidentally shit itself
+    try
+    {
+        cv::Mat sourceImage = ImageLoader::LoadImage("Assets/Images/src.tif");
+        cv::Mat referenceImage = ImageLoader::LoadImage("Assets/Images/reff.tif");
 
-    std::cout << "Result:\n" << result << std::endl;
+        ImageFeatureData features = FeatureMatcher::MatchFeatures(sourceImage, referenceImage);
 
-    cv::Mat test(2, 2, CV_8UC1, cv::Scalar(1));
-    std::cout << "OpenCV headers found and linked!" << std::endl;
+        cv::Mat H = TransformEstimator::EstimateTransform(features);
+
+        cv::Mat alignedImage = ImageAligner::AlignImages(sourceImage, H, referenceImage.size());
+
+        ImageEvaluator::EvaluateImage(referenceImage, alignedImage);
+
+        cv::imwrite("aligned.png", alignedImage);
+    }
+    catch (const std::exception& e)
+    {
+        std::cerr << "Exception: " << e.what() << std::endl;
+        return -1;
+    }
+
     return 0;
 }

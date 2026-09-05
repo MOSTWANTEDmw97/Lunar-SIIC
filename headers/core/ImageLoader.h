@@ -8,7 +8,7 @@
 class ImageLoader
 {
 	public:
-		cv::Mat LoadImage(const std::string& imagePath);
+		static cv::Mat LoadImage(const std::string& imagePath);
 };
 
 #endif // !IMAGELOADER_H
