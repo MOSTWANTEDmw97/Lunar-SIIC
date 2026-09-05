@@ -27,7 +27,7 @@ x86/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
 bld/
-[Bb]in/
+#[Bb]in/
 [Oo]bj/
 [Oo]ut/
 [Ll]og/
@@ -361,3 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/bin/opencv_videoio_ffmpeg500_64.dll
+/bin/opencv_videoio_msmf500_64.dll
+/bin/opencv_videoio_msmf500_64d.dll
+/bin/opencv_world500.dll
+/bin/opencv_world500d.dll
