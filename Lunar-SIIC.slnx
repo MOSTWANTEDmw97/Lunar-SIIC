@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Lunar-SIIC.vcxproj" Id="87b877c8-894e-4ff4-8c62-83053394bc56" />
+</Solution>
