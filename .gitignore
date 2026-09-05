@@ -366,3 +366,6 @@ FodyWeavers.xsd
 /bin/opencv_videoio_msmf500_64d.dll
 /bin/opencv_world500.dll
 /bin/opencv_world500d.dll
+/Assets/Images/ref.tif
+/Assets/Images/reff.tif
+/Assets/Images/src.tif
