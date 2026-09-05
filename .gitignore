@@ -369,3 +369,5 @@ FodyWeavers.xsd
 /Assets/Images/ref.tif
 /Assets/Images/reff.tif
 /Assets/Images/src.tif
+/out_diff.png
+/aligned.png
