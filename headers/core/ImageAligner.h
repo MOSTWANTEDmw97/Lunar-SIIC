@@ -7,7 +7,7 @@
 class ImageAligner
 {
 	public: 
-		static cv::Mat AlignImages(const cv::Mat& sourceImage, const cv::Mat& H, cv::Size alignedImageSize);
+		cv::Mat AlignImages(const cv::Mat& sourceImage, const cv::Mat& homographyMatrix, cv::Size alignedImageSize);
 };
 
 #endif // !IMAGEALIGNER_H

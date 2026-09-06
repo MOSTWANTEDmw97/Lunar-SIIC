@@ -5,10 +5,16 @@
 #include<string>
 #include<opencv2/opencv.hpp>
 
+enum ImageType
+{
+	GRAYSCALE = cv::IMREAD_GRAYSCALE,
+	COLOR = cv::IMREAD_COLOR
+};
+
 class ImageLoader
 {
 	public:
-		static cv::Mat LoadImage(const std::string& imagePath);
+		cv::Mat LoadImage(const std::string& imagePath, ImageType type = GRAYSCALE);
 };
 
 #endif // !IMAGELOADER_H

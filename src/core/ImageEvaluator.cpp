@@ -1,16 +1,13 @@
 #include"core/ImageEvaluator.h"
 #include<iostream>
 
-void ImageEvaluator::EvaluateImage(const cv::Mat& referenceImage, cv::Mat& alignedImage)
+double ImageEvaluator::CalculateRMSE(const cv::Mat& referenceImage, const cv::Mat& alignedImage)
 {
 	cv::Mat diff;
 	cv::absdiff(referenceImage, alignedImage, diff);
 
-	
-	cv::Scalar meanSquaredError = cv::mean(diff.mul(diff));
-	double rootMeanSquaredError = std::sqrt(meanSquaredError[0]);
+	cv::Scalar meanSquaredError = cv::mean(diff.mul(diff)); //MSE
+	double rootMeanSquaredError = std::sqrt(meanSquaredError[0]); //RMSE
 
-	std::cout << "Root Mean Squared Error (RMSE): " << rootMeanSquaredError << std::endl;
-
-	cv::imwrite("out_diff.png", diff);
+	return rootMeanSquaredError;
 }

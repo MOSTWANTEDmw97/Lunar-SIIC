@@ -7,7 +7,8 @@
 class ImageEvaluator
 {
 public:
-	static void EvaluateImage(const cv::Mat& referenceImage, cv::Mat& alignedImage);
+	double CalculateRMSE(const cv::Mat& referenceImage, const cv::Mat& alignedImage);
+
 };
 
 

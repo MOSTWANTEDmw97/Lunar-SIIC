@@ -9,8 +9,12 @@
 class FeatureMatcher
 {
 	public:
-		static ImageFeatureData MatchFeatures(const cv::Mat& sourceImage, const cv::Mat& referenceImage);
+		FeatureMatcher(int maxFeatures = 10000); //Set max features to 10000 by default 
+		ImageFeatureData MatchFeatures(const cv::Mat& sourceImage, const cv::Mat& referenceImage);
 
+private:
+	cv::Ptr<cv::ORB> orbDetector;
+	cv::BFMatcher featureMatcher;
 };
 
 #endif // !FEATUREMATCHER_H

@@ -9,7 +9,7 @@
 class TransformEstimator
 {
 	public:
-		static cv::Mat EstimateTransform(const ImageFeatureData& featureData);
+		cv::Mat EstimateTransform(const ImageFeatureData& featureData);
 };
 
 
